@@ -7,7 +7,7 @@ const app = express({
 
 app.use(
     "/",
-    `
+    /*html*/ `
     <p>hello world</p>
 
     <a goto="/about">click me</a>
@@ -18,7 +18,7 @@ app.use(
 
 app.use(
     "/about",
-    `
+    /*html*/ `
     <p>foo bar baz</p>
 
     <a goto="/">click me</a>
@@ -27,7 +27,7 @@ app.use(
 
 app.use(
     "/info/:id",
-    `
+    /*html*/ `
     <p>the id is {id}</p>
     `,
     (ctx) => {
