@@ -12,13 +12,13 @@ It has an API similar to Express, but naturally, it does not have as many featur
 
 Installing is very easy with NPM or Yarn:
 
-````bash
+```bash
 npm install @cursorsdottsx/express
 ```
 
 ```bash
 yarn add @cursorsdottsx/express
-````
+```
 
 Using it is equally as easy:
 
