@@ -174,4 +174,14 @@ When you are done, open a pull request and we'll look it at right away.
 
 Make sure to include/describe the new feature, bug fix, or addition to the library.
 
+### Starting the app
+
+To build the TypeScript with webpack, execute the following command:
+
+```bash
+yarn build
+```
+
+Then serve the root directory and enjoy the result. I used `serve .` in my case, but you could also use `python3 -m http.server 5000`.
+
 ##### Made with ❤️ by [cursorsdottsx](https://cursorsdottsx.github.io)
