@@ -40,16 +40,7 @@ function lexer(str: string): LexToken[] {
             while (j < str.length) {
                 const code = str.charCodeAt(j);
 
-                if (
-                    // `0-9`
-                    (code >= 48 && code <= 57) ||
-                    // `A-Z`
-                    (code >= 65 && code <= 90) ||
-                    // `a-z`
-                    (code >= 97 && code <= 122) ||
-                    // `_`
-                    code === 95
-                ) {
+                if ((code >= 48 && code <= 57) || (code >= 65 && code <= 90) || (code >= 97 && code <= 122) || code === 95) {
                     name += str[j++];
                     continue;
                 }

@@ -29,7 +29,7 @@ export type RouteCallbackReturn =
     | {
           notFound?: boolean;
           props?: Props;
-          template: string;
+          template?: string;
       };
 
 /**
@@ -57,4 +57,8 @@ export type AppOptions = {
      * Attribute to look for to register links.
      */
     attribute?: string;
+    /**
+     * Sanitizer to purify templates.
+     */
+    sanitizer?: (ctx: string) => string;
 };

@@ -49,7 +49,9 @@ export default class App {
 
                     const props = this.flatten(value.props);
 
-                    return this.render(this.fill(value.template, props));
+                    const content = this.fill(value.template ?? route.template, props);
+
+                    return this.render(this.options?.sanitizer ? this.options.sanitizer(content) : content);
                 } catch (error) {
                     if (this.options?.error) this.render(this.options.error(error));
 
@@ -91,15 +93,15 @@ export default class App {
      * Renders a template.
      * @param template Template to render.
      */
-    private render(template: string) {
+    private render(template: string, sanitizer?: (template: string) => string) {
         document.body.innerHTML = "";
 
-        const nodes = Array.from(new DOMParser().parseFromString(template, "text/html").body.childNodes);
+        const nodes = Array.from(new DOMParser().parseFromString(sanitizer ? sanitizer(template) : template, "text/html").body.childNodes);
 
         document.body.append(...nodes);
 
-        return document.querySelectorAll("[goto]").forEach((link) => {
-            const route = link.getAttribute("goto");
+        return document.querySelectorAll(`[${this.options?.attribute ?? "goto"}]`).forEach((link) => {
+            const route = link.getAttribute(this.options?.attribute ?? "goto");
 
             if (!route) return;
 
