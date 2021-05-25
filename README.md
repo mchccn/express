@@ -30,6 +30,9 @@ const app = express();
 
 # Documentation
 
+There's a small example available in the GitHub repository that you can use to get a glimpse of what this looks like in action, so make sure to check that out.
+If you don't get what's happening, come back and take a look at the documentation.
+
 ## Definitions
 
 `express(options)` – **Creates a new app.**
@@ -58,11 +61,27 @@ const app = express();
 
 ## Basic routing
 
+It's literally the same as Express.js, but if you're too lazy to go over it again, here's a quick recap:
+
+-   `/` – Root.
+-   `/route` – A route.
+-   `/a/route` – Another route.
+-   `/param/:foo` – Route parameter.
+-   `/param/:foo/:bar` – Two route parameters.
+
 ## Route callbacks
 
 The third parameter to `App#use` is called when the route gets matched.
 Its return value is used to decide what gets rendered.
 Since its optional, if it is not provided, the route's default template will be rendered.
+
+### Execution context
+
+The callback will receive one parameter, the execution context. This object contains the following:
+
+-   `url` – An instance of `URL` of the current url.
+-   `params` – Route parameters.
+-   `query` – URL query.
 
 ### Not found
 
@@ -147,7 +166,7 @@ app.use(
 
 ## Contributing
 
-Inside the folder `src/lib` is the actual library that you can ~~copy and paste~~ use in your own apps.
+Inside the folder `src/lib` is the actual library that is published to NPM.
 `src/app` contains the code for the demonstration and example.
 When contributing, make sure to edit the `lib` folder and make any necessary changes to the `app` folder if the API was modified.
 
@@ -155,4 +174,4 @@ When you are done, open a pull request and we'll look it at right away.
 
 Make sure to include/describe the new feature, bug fix, or addition to the library.
 
-
+##### Made with ❤️ by [cursorsdottsx](https://cursorsdottsx.github.io)
