@@ -1,0 +1,27 @@
+{
+    "name": "@cursorsdottsx/express",
+    "description": "Express.js, but for the client side.",
+    "version": "1.0.0",
+    "main": "dist/index.js",
+    "scripts": {
+        "watch": "tsc -w",
+        "build": "webpack",
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "dependencies": {},
+    "devDependencies": {
+        "tslib": "^2.2.0",
+        "typescript": "^4.2.4"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/cursorsdottsx/express.git"
+    },
+    "keywords": [],
+    "author": "im-lonely <cursors.dev@gmail.com>",
+    "license": "MIT",
+    "bugs": {
+        "url": "https://github.com/cursorsdottsx/express/issues"
+    },
+    "homepage": "https://github.com/cursorsdottsx/express#readme"
+}
