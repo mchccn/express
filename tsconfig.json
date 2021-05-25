@@ -2,7 +2,7 @@
     "compilerOptions": {
         "target": "es6",
         "module": "es6",
-        "lib": ["dom", "esnext", "esnext.asynciterable"],
+        "lib": ["dom", "dom.iterable", "es2017.object", "esnext", "esnext.asynciterable"],
         "importHelpers": true,
         "downlevelIteration": true,
         "strict": true,
