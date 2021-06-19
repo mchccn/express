@@ -134,7 +134,7 @@ export default class App {
             if (typeof dictionary !== "object" || dictionary === null) return (flattened[propName] = dictionary);
 
             for (const prop of Object.keys(dictionary))
-                if (!/[$A-Za-z0-9_-]/.test(prop)) throw new SyntaxError(`Invalid prop name '${prop}'.`);
+                if (!/^[$A-Za-z0-9_-]+$/.test(prop)) throw new SyntaxError(`Invalid prop name '${prop}'.`);
                 else flatten(dictionary[prop], `${propName}${propName ? "." : ""}${prop}`);
         })(object, "");
 

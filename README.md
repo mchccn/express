@@ -109,7 +109,7 @@ app.use(
 
 Along with displaying a 404, you can also pass props to the template.
 All you have to do is return a props object with the desired keys and values.
-Keys must satisfy this regex, however: `/[$A-Za-z0-9_-]/`.
+Keys must satisfy this regex, however: `/^[$A-Za-z0-9_-]+$/`.
 Values can be any primitive, or an object with more keys and values.
 
 ```js
